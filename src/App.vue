@@ -1,38 +1,75 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-toolbar>
+    <v-app dark>
+        <v-toolbar
+            color="primary"
+            dark
+            fixed
+            app
+            clipped-right
+        >
+            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <v-toolbar-title>Toolbar</v-toolbar-title>
+            <v-spacer></v-spacer>
+        </v-toolbar>
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+        <v-navigation-drawer
+            v-model="drawer"
+            fixed
+            app
+        >
+            <v-list dense>
+                <v-list-tile @click.stop="left = !left">
+                <v-list-tile-action>
+                    <v-icon>exit_to_app</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                    <v-list-tile-title>Open Temporary Drawer</v-list-tile-title>
+                </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
+        </v-navigation-drawer>
+
+        <v-navigation-drawer
+            v-model="left"
+            temporary
+            fixed
+        ></v-navigation-drawer>
+
+        <v-content>
+            <v-container fluid fill-height>
+                <v-layout justify-center align-center>
+                    <v-flex shrink>
+                        
+                        <p>CONTENT</p>
+
+                    </v-flex>
+                </v-layout>
+            </v-container>
+        </v-content>
+
+        <v-footer class="primary--text v-toolbar__content" app>
+            <span>Vuetify</span>
+            <v-spacer></v-spacer>
+            <span>&copy; 2017</span>
+        </v-footer>
+    </v-app>
 </template>
+
 
 <script>
 import HelloWorld from './components/HelloWorld'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
-    return {
-      //
-    }
-  }
+    name: 'App',
+    components: {
+        HelloWorld
+    },
+    props: {
+        source: String
+    },
+    data: () => ({
+        drawer: false,
+        left: false
+    })
 }
 </script>
