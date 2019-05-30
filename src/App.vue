@@ -1,67 +1,30 @@
-<template>
-    <v-app :dark="$store.getters.getDarkMode || null">
-        <v-toolbar
-            color="primary"
-            dark
-            fixed
-            app
-            clipped-right
-        >
-            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title>Toolbar</v-toolbar-title>
-            <v-spacer></v-spacer>
-        </v-toolbar>
+<template lang="pug">
+  v-app(:dark="$store.getters.getDarkMode || null")
+    app-header(@navigate-panel="drawer = !drawer")
+    app-navigate(:drawer="drawer", @settings-panel="left = !left")
+    app-settings(:drawer="left")
 
-        <v-navigation-drawer
-            v-model="drawer"
-            fixed
-            app
-        >
-            <v-list dense>
-                <v-list-tile @click.stop="left = !left">
-                <v-list-tile-action>
-                    <v-icon>exit_to_app</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                    <v-list-tile-title>Open Temporary Drawer</v-list-tile-title>
-                </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
+    v-content
+      v-container(fluid, fill-height)
+        v-layout(fill-height)
+          router-view
 
-        <v-navigation-drawer
-            v-model="left"
-            temporary
-            fixed
-        ></v-navigation-drawer>
-
-        <v-content>
-            <v-container fluid fill-height>
-                <v-layout justify-center align-center>
-                    <v-flex shrink>
-
-                        <p>CONTENT</p>
-
-                    </v-flex>
-                </v-layout>
-            </v-container>
-        </v-content>
-
-        <v-footer class="primary--text v-toolbar__content" app>
-            <span>Vuetify</span>
-            <v-spacer></v-spacer>
-            <span>&copy; 2017</span>
-        </v-footer>
-    </v-app>
+    app-footer
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import AppFooter from './components/global/footer'
+import AppHeader from './components/global/header'
+import AppNavigate from './components/global/nav-panel'
+import AppSettings from './components/global/settings-panel'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppFooter,
+    AppHeader,
+    AppNavigate,
+    AppSettings
   },
   props: {
     source: String
@@ -69,12 +32,6 @@ export default {
   data: () => ({
     drawer: false,
     left: false
-  }),
-  created () {
-    console.log(this)
-    console.log(this.$router)
-    console.log(this.$store.state.theme)
-    console.log(this.$store.getters.getDarkMode)
-  }
+  })
 }
 </script>
