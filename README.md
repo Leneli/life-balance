@@ -1,4 +1,4 @@
-# balance
+# Wheel of Life Balance
 
 ## Project setup
 ```

@@ -1,5 +1,5 @@
 <template>
-    <v-app dark>
+    <v-app :dark="$store.getters.getDarkMode || null">
         <v-toolbar
             color="primary"
             dark
@@ -39,7 +39,7 @@
             <v-container fluid fill-height>
                 <v-layout justify-center align-center>
                     <v-flex shrink>
-                        
+
                         <p>CONTENT</p>
 
                     </v-flex>
@@ -55,21 +55,26 @@
     </v-app>
 </template>
 
-
 <script>
 import HelloWorld from './components/HelloWorld'
 
 export default {
-    name: 'App',
-    components: {
-        HelloWorld
-    },
-    props: {
-        source: String
-    },
-    data: () => ({
-        drawer: false,
-        left: false
-    })
+  name: 'App',
+  components: {
+    HelloWorld
+  },
+  props: {
+    source: String
+  },
+  data: () => ({
+    drawer: false,
+    left: false
+  }),
+  created () {
+    console.log(this)
+    console.log(this.$router)
+    console.log(this.$store.state.theme)
+    console.log(this.$store.getters.getDarkMode)
+  }
 }
 </script>
