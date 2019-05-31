@@ -1,3 +1,6 @@
+import { read } from "../../../vendor/storage";
+import { THEME_COLORS } from "../../../vendor/storage/types";
+
 /**
  * Colors
  */
@@ -51,4 +54,14 @@ export const TEAL = {
 
 export const THEMES = [ LIME, TEAL ]
 
-export const DEFAULT_COLORS_THEME = TEAL
+let savedTheme = read(THEME_COLORS)
+
+try {
+  if (typeof savedTheme === 'string') savedTheme = JSON.parse(savedTheme)
+} catch (error) {
+  console.warn('Store: theme, invalid Theme in localStorage', error)
+
+  savedTheme = null
+}
+
+export const DEFAULT_COLORS_THEME = savedTheme || TEAL

@@ -16,3 +16,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.v-footer {
+  position: relative;
+}
+</style>

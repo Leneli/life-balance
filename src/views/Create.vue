@@ -14,35 +14,28 @@
       v-layout(align-center)
         h1.display-2 Create new
         v-spacer
-        v-btn.mr-0(color="primary") Add
+        v-btn.mr-0(color="secondary") Add
 
       v-layout(column fill-height)
-        .item
+        v-card.item
           v-layout(row wrap fill-height)
             v-flex(xs12 sm4)
               v-text-field.pa-1(label="Name" solo hint="At least 8 characters")
-            v-flex(xs12 sm6)
+            v-flex(xs12 sm5)
               v-text-field.pa-1(label="Short description" solo hint="At least 8 characters")
-            v-flex(xs12 sm2)
-              v-text-field.pa-1(label="Default value" solo hint="At least 8 characters")
-
-        .item
-          v-layout(row wrap fill-height)
-            v-flex(xs12 sm4)
-              v-text-field.pa-1(label="Name" solo hint="At least 8 characters")
-            v-flex(xs12 sm6)
-              v-text-field.pa-1(label="Short description" solo hint="At least 8 characters")
-            v-flex(xs12 sm2)
-              v-text-field.pa-1(label="Default value" solo hint="At least 8 characters")
-
-        .item
-          v-layout(row wrap fill-height)
-            v-flex(xs12 sm4)
-              v-text-field.pa-1(label="Name" solo hint="At least 8 characters")
-            v-flex(xs12 sm6)
-              v-text-field.pa-1(label="Short description" solo hint="At least 8 characters")
-            v-flex(xs12 sm2)
-              v-text-field.pa-1(label="Default value" solo hint="At least 8 characters")
+            v-flex(xs10 sm2)
+              v-text-field.pa-1(label="Default value" type="number" min="0" max="10" solo hint="At least 8 characters")
+            v-flex(xs2 sm1)
+              v-icon(color="secondary" right) autorenew
+              v-btn.remove-btn(
+                color="warning"
+                small
+                absolute
+                right
+                bottom
+                fab
+              )
+                v-icon remove
 
 </template>
 
@@ -56,5 +49,9 @@
   min-width: 80px;
   margin: 10px 0;
   background-color: rgba(#000, .1)
+}
+
+.remove-btn {
+  // top: 7px;
 }
 </style>
