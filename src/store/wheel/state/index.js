@@ -1,11 +1,14 @@
+import { wheel } from './wheel'
+
 export const state = {
+  wheel,
+
   /**
    * number of sections in Wheel
    */
-  currentNumberOfSections: 8,
-  minNumberOfSections: 4,
-  maxNumberOfSections: 12,
-  standartNumberOfSections: 8,
+  minNumberOfSectors: 4,
+  maxNumberOfSectors: 12,
+  standartNumberOfSectors: 8,
 
   /**
    * scale from - to

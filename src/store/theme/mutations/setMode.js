@@ -1,6 +1,6 @@
 import { DARK_MODE, LIGHT_MODE } from '../state/mode'
-import { save } from '../../../vendor/storage';
-import { THEME_MODE } from '../../../vendor/storage/types';
+import { save } from '../../../vendor/storage'
+import { THEME_MODE } from '../../../vendor/storage/types'
 
 export default function setMode (state, mode) {
   if (!mode) {

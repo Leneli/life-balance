@@ -1,5 +1,5 @@
-import { read } from "../../../vendor/storage";
-import { THEME_COLORS } from "../../../vendor/storage/types";
+import { read } from '../../../vendor/storage'
+import { THEME_COLORS } from '../../../vendor/storage/types'
 
 /**
  * Colors

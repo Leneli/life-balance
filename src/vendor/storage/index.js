@@ -13,7 +13,7 @@ export function saveMulti (datas) {
 export function read (key) {
   var r = storage.getItem(key)
 
-  if (r === 'true' || r === 'false' || !isNaN(r) && r !== '') {
+  if (r === 'true' || r === 'false' || !isNaN(r) && r !== '') { // eslint-disable-line no-mixed-operators
     return JSON.parse(storage.getItem(key))
   }
 

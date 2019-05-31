@@ -1,6 +1,6 @@
-import { THEMES } from "../state/colors";
-import { save } from "../../../vendor/storage";
-import { THEME_COLORS } from "../../../vendor/storage/types";
+import { THEMES } from '../state/colors'
+import { save } from '../../../vendor/storage'
+import { THEME_COLORS } from '../../../vendor/storage/types'
 
 export default function setThemeByName (state, payload) {
   if (payload && typeof payload === 'string') {

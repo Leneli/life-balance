@@ -6,7 +6,7 @@
   )
     div.pa-3
       v-switch(v-model="mode" :label="'Dark Mode'" @click="$store.dispatch('switchMode')")
-    
+
     div.pa-3(v-if="$vuetify")
       h3 Theme
       v-radio-group(v-model="themeName", @click="switchTheme")
@@ -36,6 +36,6 @@ export default {
       this.$store.dispatch('switchTheme', this.themeName)
       this.$vuetify.theme = this.$store.getters.getCurrentThemeColors
     }
-  },
+  }
 }
 </script>

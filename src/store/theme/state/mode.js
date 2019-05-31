@@ -1,5 +1,5 @@
-import { read } from "../../../vendor/storage";
-import { THEME_MODE } from "../../../vendor/storage/types";
+import { read } from '../../../vendor/storage'
+import { THEME_MODE } from '../../../vendor/storage/types'
 
 export const DARK_MODE = 'dark'
 export const LIGHT_MODE = 'light'
