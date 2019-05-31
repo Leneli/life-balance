@@ -24,23 +24,31 @@ export const HEX_BLUE_GREY = '#607d8b'
  * Themes
  */
 export const LIME = {
-  primary: HEX_LIME,
-  secondary: HEX_TEAL,
-  accent: HEX_DEEP_ORANGE,
-  error: HEX_RED,
-  warning: HEX_AMBER,
-  info: HEX_CYAN,
-  success: HEX_LIGHT_GREEN
+  name: 'Lime',
+  colors: {
+    primary: HEX_LIME,
+    secondary: HEX_TEAL,
+    accent: HEX_DEEP_ORANGE,
+    error: HEX_RED,
+    warning: HEX_AMBER,
+    info: HEX_CYAN,
+    success: HEX_LIGHT_GREEN
+  }
 }
 
 export const TEAL = {
-  primary: HEX_TEAL,
-  secondary: HEX_DEEP_ORANGE,
-  accent: HEX_LIGHT_GREEN,
-  error: HEX_RED,
-  warning: HEX_AMBER,
-  info: HEX_BLUE,
-  success: HEX_GREEN
+  name: 'Teal',
+  colors: {
+    primary: HEX_TEAL,
+    secondary: HEX_DEEP_ORANGE,
+    accent: HEX_LIGHT_GREEN,
+    error: HEX_RED,
+    warning: HEX_ORANGE,
+    info: HEX_BLUE,
+    success: HEX_GREEN
+  }
 }
+
+export const THEMES = [ LIME, TEAL ]
 
 export const DEFAULT_COLORS_THEME = TEAL

@@ -11,6 +11,6 @@ const langRu = {
 
 Vue.use(Vuetify, {
   iconfont: 'md',
-  theme: DEFAULT_COLORS_THEME,
+  theme: DEFAULT_COLORS_THEME.colors,
   lang: langRu
 })

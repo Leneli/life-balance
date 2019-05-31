@@ -1,10 +1,20 @@
 <template lang="pug">
   div.main
     //- TODO: "Внимание! Текущее колесо баланса будет удалено безвозвратно!"
-    div
+    div.mb-5(v-if="true")
+      v-alert(
+        :value="true"
+        color="warning"
+        icon="priority_high"
+        outline
+        dismissible
+      ) Внимание! Текущее колесо баланса будет удалено безвозвратно!
 
     div
-      h1.display-2 Create new
+      v-layout(align-center)
+        h1.display-2 Create new
+        v-spacer
+        v-btn.mr-0(color="primary") Add
 
       v-layout(column fill-height)
         .item
