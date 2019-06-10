@@ -1,5 +1,9 @@
-import createWheel from "./createWheel";
+import createWheel from './createWheel'
+import { updateSectorName, updateSectorValue, updateSectorDescription } from './sectorUpdate'
 
 export const actions = {
-  createWheel
+  createWheel,
+  updateSectorName,
+  updateSectorValue,
+  updateSectorDescription
 }

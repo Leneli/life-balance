@@ -1,11 +1,6 @@
-export default function createWheel (state) {
-  state.wheel = {}
+import Wheel from '../../../vendor/class/wheel'
 
-  for (let i = 0; i < state.minNumberOfSectors; i++) {
-    state.wheel[i] = {
-      name: null,
-      value: 0,
-      description: null
-    }
-  }
+export default function createWheel (state) {
+  state.wheel = new Wheel()
+  state.currentWheelId = state.wheel.id
 }

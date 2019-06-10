@@ -5,11 +5,14 @@
         v-text-field.pa-1(
           label="Название"
           hint="Название секции в колесе баланса"
+          :value="sector.name"
+          @input="$store.dispatch('updateSectorName', { id, prop: $event })"
           solo)
       v-flex(xs12 sm5)
         v-text-field.pa-1(
           label="Короткое описание"
           hint="Не более 100 символов"
+          :value="sector.description"
           solo)
       v-flex(xs10 sm2)
         v-text-field.pa-1(
@@ -18,6 +21,7 @@
           :min="$store.getters.getStartScaleValue"
           :max="$store.getters.getFinishScaleValue"
           :hint="`По шкале от ${$store.getters.getStartScaleValue} до ${$store.getters.getFinishScaleValue}`"
+          :value="sector.value"
           solo)
       v-flex.box-last(xs2 sm1)
         v-icon.refresh(color="secondary") autorenew
@@ -43,7 +47,15 @@ export default {
     }
   },
   computed: {
+    sector () {
+      return this.$store.getters.getSector({
+        id: this.id
+      })
+    }
+  },
 
+  mounted () {
+    console.log(this.sector)
   }
 }
 </script>
